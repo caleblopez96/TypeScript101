@@ -35,7 +35,7 @@ async function fetchData(): Promise<string> {
 }
 
 // EXAMPLE: function that returns another function
-function greet(user: string): () => string {
+function greetUser(user: string): () => string {
   return function () {
     return `Hello ${user}`;
   };
