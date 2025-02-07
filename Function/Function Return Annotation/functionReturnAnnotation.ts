@@ -25,8 +25,8 @@ function getUnknown(): unknown {
 }
 
 // EXAMPLE: function with object return
-function getUser(): { name: string; age: number } {
-  return { name: "caleb", age: 28 };
+function randomCoordiante(): { x: number; y: number } {
+  return { x: Math.random(), y: Math.random() };
 }
 
 // EXAMPLE: function that returns promise

@@ -10,9 +10,11 @@
 const doSomething = (person: string, age: number, isFunny: boolean) => {};
 console.log(doSomething("caleb", 28, true)); // undefined
 
+// Object as function parameter
 function printName(person: { first: string; last: string }): void {
   console.log(`First Name: ${person.first}, Last Name: ${person.last}`);
 }
+printName({ first: "Will", last: "Smith" });
 
 // Return type annotation:
 // function with default parameter
