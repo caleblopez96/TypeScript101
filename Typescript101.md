@@ -33,10 +33,49 @@ let numbers: number[] = [1, 2, 3];
 let names: Array<string> = ["Alice", "Bob"];
 
 // Tuple
-let person: [string, number] = ["John", 30];
+let person: [string, [number, Date]] = ["John", [30, new Date("2025-05-15")]];
 
 // Object
 let user: object = { name: "John", age: 30 };
+
+// Set (collection of unique values)
+let uniqueNumbers: Set<number> = new Set([1, 2, 3, 3]); // {1, 2, 3}
+
+// Map (key-value pairs)
+let userRoles: Map<string, string> = new Map();
+userRoles.set("John", "Admin");
+userRoles.set("Alice", "User");
+
+// Enum (set of named constants)
+enum UserRole {
+  Admin = "ADMIN",
+  User = "USER",
+  Guest = "GUEST",
+}
+
+let currentUserRole: UserRole = UserRole.Admin;
+console.log(currentUserRole); // "ADMIN"
+
+// Union Type (variable can be more than one type)
+let value: string | number = "Hello";
+value = 123;
+
+// Literal Type (variable can only be one of a set of specific values)
+let direction: "up" | "down" | "left" | "right";
+direction = "up";
+// direction = "north"; // ❌ Error
+
+// Type Alias (define custom type names)
+type Point = {
+  x: number;
+  y: number;
+};
+
+let coordinate: Point = { x: 10, y: 20 };
+
+// Function Type
+let add: (a: number, b: number) => number;
+add = (a, b) => a + b;
 ```
 
 ## Variables & Constants
