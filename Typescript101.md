@@ -99,6 +99,13 @@ function greet(name: string): string {
   return `Hello, ${name}!`;
 }
 
+// Basic function
+function reverseString(str: string): string {
+  let reversedString = str.split("").reverse().join("");
+  return reversedString;
+}
+console.log(reverseString("hello")); // olleh
+
 // Arrow function
 const add = (a: number, b: number): number => a + b;
 
