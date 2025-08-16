@@ -48,22 +48,33 @@ class LibraryBook {
     public isCheckedOut: boolean = false
   ) {}
 
-  checkedOut() {
+  checkOut() {
     this.isCheckedOut = true;
     console.log(`The book ${this.title} has been checked out.`);
   }
 
-  returnedBook() {
+  returnBook() {
     this.isCheckedOut = false;
     console.log(`The book ${this.title} has been returned.`);
   }
 
   describe() {
     console.log(
-      `Book title: ${this.title}, Book Author: ${this.author}, Book Year: ${this.year}, book available?: ${this.isCheckedOut}`
+      `Title: ${this.title}, Author: ${this.author}, Year: ${this.year}, Checked Out: ${this.isCheckedOut}`
     );
   }
 }
 
-const book1 = new LibraryBook("Harry Potsmoker", "Jk Rowling", 2005, true);
-console.log(book1.describe());
+// create two books
+const book1 = new LibraryBook("Harry Potsmoker", "Jk Rowling", 2005);
+const book2 = new LibraryBook("Book Title 2", "Author Name 2", 2010);
+
+// show initial state
+book1.describe();
+book2.describe();
+
+// call checkOut and returnBook
+book1.checkOut();
+book1.describe();
+book1.returnBook();
+book1.describe();
