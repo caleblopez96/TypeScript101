@@ -78,3 +78,67 @@ book1.checkOut();
 book1.describe();
 book1.returnBook();
 book1.describe();
+
+//--------------------------------------------------------------------------------
+// Requirements:
+
+// Class Name: Student
+
+// Properties:
+
+// name (string)
+// grades (array of numbers, default: empty array [])
+
+// Constructor:
+// Initializes name
+// grades should default to an empty array
+
+// Methods:
+// addGrade(grade: number) → adds a grade to the grades array
+// getAverage() → returns the average of all grades
+// describe() → prints:
+// Student: [name], Grades: [grade1, grade2, ...], Average: [average]
+
+// Tasks to Practice:
+// Create at least two student objects
+// Add grades using addGrade()
+// Call describe() to show each student’s grades and average
+
+class Student {
+  constructor(public name: string, public grades: Array<number> = []) {}
+
+  displayGrades() {
+    this.grades.forEach((grade) => console.log(grade));
+  }
+
+  addGrade(newGrades: number | number[]) {
+    if (Array.isArray(newGrades)) {
+      this.grades.push(...newGrades);
+    } else {
+      this.grades.push(newGrades);
+    }
+  }
+
+  getAverage() {
+    if (this.grades.length === 0) return 0;
+    const sum = this.grades.reduce((acc, curVal) => acc + curVal, 0);
+    return sum / this.grades.length;
+  }
+
+  describe() {
+    console.log(
+      `Student: ${this.name}, Grades: ${this.grades.join(
+        ", "
+      )}, Average: ${this.getAverage()}`
+    );
+  }
+}
+
+const student1 = new Student("Bob", [90, 75, 80, 100]);
+const student2 = new Student("Sally", [75, 80, 60, 95]);
+
+student1.addGrade([90, 30]);
+student2.addGrade(85);
+
+student1.describe(); // Student: Bob, Grades: 90, 75, 80, 100, 90, 30, Average: 77.5
+student2.describe(); // Student: Sally, Grades: 75, 80, 60, 95, 85, Average: 79
