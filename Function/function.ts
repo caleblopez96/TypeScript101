@@ -1,25 +1,50 @@
-// Function Declaration
+/* Regular Function Declaration: */
+// SYNTAX:
+function functionName(paramName: ParamType): ReturnType {
+  // function body
+  // return
+}
+
+// EXAMPLE:
 function square1(num: number): number {
-  return num * num
+  return num * num;
 }
 
-// Arrow Function
-const square2 = (num: number): number => num * num
+/* ------------------------------------------- */
 
-// Function Expression
-const square3 = function(num: number): number {
-  return num * num
+/* Arrow Function Expression */
+// SYNTAX:
+const functionName = (paramName: ParamType): ReturnType => {
+  // function body
+  // return
+};
+
+// EXAMPLE:
+const sqaure2 = (num: number): number => {
+  return num * num;
+};
+
+// EXAMPLE SHORTHAND:
+const square3 = (num: number): number => num * num;
+
+/* ------------------------------------------- */
+
+/* ASYNC */
+// SYNTAX:
+async function functionName(paramName: ParamType): Promise<ReturnType> {
+  // function body
+  // return
 }
 
-// Async Function
-async function squareAsync(num: number): Promise<number> {
-  return num * num
+// EXAMPLE:
+async function fetchData(url: string): Promise<string> {
+  const response = await fetch(url);
+  return await response.text();
 }
 
-// Async Arrow Function
-const squareAsync2 = async (num: number): Promise<number> => num * num
+/* ------------------------------------------- */
 
-// Default Parameter
+/* Default Parameter */
 function greeting(person: string = "Stranger") {
-  return `Hello there, ${person}`
+  return `Hello there, ${person}`;
 }
