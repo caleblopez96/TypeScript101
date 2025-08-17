@@ -1,7 +1,3 @@
-// ============================================
-// TYPESCRIPT ARRAYS - QUICK REFERENCE
-// ============================================
-
 // SYNTAX: Generic type
 let numbers1: Array<number> = [1, 2, 3, 4];
 
