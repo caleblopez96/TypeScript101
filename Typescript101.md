@@ -18,6 +18,8 @@
 
 ## Basic Types
 
+TypeScript doesn’t use “types on the left”-style declarations like int x = 0; Type annotations will always go after the thing being typed.
+
 ```typescript
 // Primitives
 let name: string = "John";
